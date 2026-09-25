@@ -110,7 +110,7 @@ fun LoginScreen(
             shape = RoundedCornerShape(size = 4.dp),
             border = BorderStroke(
                 width = 2.dp,
-                color = Color.Black
+                color = MaterialTheme.colorScheme.secondary
             ),
             colors = ButtonDefaults.buttonColors(
                 contentColor = MaterialTheme.colorScheme.secondary
