@@ -33,7 +33,7 @@ class FakeAuthRepository : LoginRepository {
                 Result.success(
                     UsuarioLogado(
                         id = "1",
-                        nome = "Rafael Costa",
+                        nome = "Murilo Sousa",
                         matricula = "2026000001",
                         perfil = PerfilAcesso.ALUNO,
                         curso = "Desenvolvimento de Sistemas",

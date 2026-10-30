@@ -6,11 +6,7 @@ plugins {
 
 android {
     namespace = "com.rafaelcosta.carteirinhadigital2devest_b"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.rafaelcosta.carteirinhadigital2devest_b"

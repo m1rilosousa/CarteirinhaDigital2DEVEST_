@@ -17,23 +17,13 @@ fun App(container: AppContainer) {
     val systemDarkTheme = isSystemInDarkTheme()
     var darkTheme by rememberSaveable { mutableStateOf(systemDarkTheme) }
 
-    CarteirinhaDigital2DEVESTTheme(
-        darkTheme = darkTheme
-    ) {
-        val navController = rememberNavController().apply {
-
-            AppNavHost(
-                navController = this,
-                darkTheme = darkTheme,
-                onDarkThemeChange = { darkTheme = it },
-                container = container
-            )
-        }
+    CarteirinhaDigital2DEVEST_BTheme(darkTheme = darkTheme) {
+        val navController = rememberNavController()
+        AppNavHost(
+            navController = navController,
+            darkTheme = darkTheme,
+            onDarkThemeChange = { darkTheme = it },
+            container = container
+        )
     }
 }
-
-@Composable
-fun CarteirinhaDigital2DEVESTTheme(darkTheme: Boolean, content: @Composable () -> Unit) {
-    TODO("Not yet implemented")
-}
-

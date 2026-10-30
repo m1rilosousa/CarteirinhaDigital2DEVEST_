@@ -1,7 +1,12 @@
 package com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.unidadescurriculares.presentation.factory
 
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.unidadescurriculares.domain.repository.UnidadeCurricularRepository
+import com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.unidadescurriculares.presentation.UnidadeCurricularViewModel
+
 class UnidadeCurricularViewModelFactory(
-    private val repository:UnidadeCurricularRepository
+    private val repository: UnidadeCurricularRepository
 ) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

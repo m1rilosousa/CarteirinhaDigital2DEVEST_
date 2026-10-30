@@ -1,5 +1,8 @@
 package com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.unidadescurriculares.data.remote.dto
 
+import com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.unidadescurriculares.domain.model.UnidadeCurricular
+import kotlinx.serialization.Serializable
+
 @Serializable
 data class UnidadeCurricularDto(
     val id: String,

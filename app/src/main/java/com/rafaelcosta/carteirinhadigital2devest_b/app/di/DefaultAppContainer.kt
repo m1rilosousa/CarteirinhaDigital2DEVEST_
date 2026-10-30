@@ -4,6 +4,7 @@ import com.rafaelcosta.carteirinhadigital2devest_b.core.auth.SessionTokenStore
 import com.rafaelcosta.carteirinhadigital2devest_b.core.network.NetworkClient
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.unidadescurriculares.data.remote.service.UnidadeCurricularApi
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.unidadescurriculares.data.repository.ApiUnidadeCurricularRepositoryImpl
+import com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.unidadescurriculares.data.repository.FakeUnidadeCurricularRepositoryImpl
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.aluno.unidadescurriculares.domain.repository.UnidadeCurricularRepository
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.data.remote.service.AuthApi
 import com.rafaelcosta.carteirinhadigital2devest_b.feature.login.data.repository.ApiLoginRepositoryImpl
@@ -31,11 +32,13 @@ class DefaultAppContainer : AppContainer {
         }
     }
     override val unidadeCurricularRepository: UnidadeCurricularRepository by lazy {
-        ApiUnidadeCurricularRepositoryImpl(api = unidadeCurricularApi)
+        if (USE_FAKE_LOGIN_REPOSITORY) FakeUnidadeCurricularRepositoryImpl() else {
+            ApiUnidadeCurricularRepositoryImpl(api = unidadeCurricularApi)
+        }
     }
 
     companion object {
         private const val BASE_URL = "http://10.0.2.2:8080/"
-        private const val USE_FAKE_LOGIN_REPOSITORY = false
+        private const val USE_FAKE_LOGIN_REPOSITORY = true
     }
 }
